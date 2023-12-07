@@ -497,6 +497,12 @@ class FluidBox:
         if sig.type == 'cc':
             if sig.par1 == 0:
                 self.load_bank(Path(f"bank{sig.par2}.yaml"))
+            if sig.par1 == 20:
+                self.load_bank(Path(f"bank0.yaml"))
+            if sig.par1 == 21:
+                self.load_bank(Path(f"bank1.yaml"))
+            if sig.par1 == 22:
+                self.load_bank(Path(f"bank2.yaml"))
         if sig.type == 'prog':
             pno = sig.par1
             if pno < 0:

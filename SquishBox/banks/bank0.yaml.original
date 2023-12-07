@@ -11,6 +11,18 @@ patches:
     info: basic patch - assigns a voice (soundfont:bank:program) to a MIDI channel
     1: FM Piano.sf2:000:000
     
+  pipe organ:
+    1: mytest.sf2:000:000
+    
+  flute:
+    1: mytest.sf2:000:001
+    
+  vibraphone:
+    1: mytest.sf2:000:002
+    
+  wah brass:
+    1: mytest.sf2:000:003
+    
   Two Hands:
     info: This patch has `router_rules` that clear the default rules and send each
       half of the keyboard to a different voice.

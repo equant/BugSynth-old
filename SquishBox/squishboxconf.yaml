@@ -5,7 +5,7 @@ soundfontdir: SquishBox/sf2
 bankdir: SquishBox/banks
 mfilesdir: SquishBox/midi
 plugindir: /usr/lib/ladspa
-currentbank: bank1.yaml
+currentbank: bank2.yaml
 fluidsettings:
   audio.driver: alsa
   audio.alsa.device: hw:CODEC
