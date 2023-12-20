@@ -1,0 +1,59 @@
+description: example bank file that demonstrates many of the features of fluidpatcher
+  view the wiki at https://github.com/albedozero/fluidpatcher/wiki for detailed info
+
+patches:
+  pipe organ:
+    1: CasioMT70.sf2:000:000
+  wood wind:
+    1: CasioMT70.sf2:000:001
+  flute:
+    1: CasioMT70.sf2:000:002
+  piano:
+    1: CasioMT70.sf2:000:003
+  vibraphone:
+    1: CasioMT70.sf2:000:004
+  jazz organ 2:
+    1: CasioMT70.sf2:000:005
+  chorus:
+    1: CasioMT70.sf2:000:006
+  synth. brass:
+    1: CasioMT70.sf2:000:007
+  wah brass:
+    1: CasioMT70.sf2:000:008
+  synth. bells:
+    1: CasioMT70.sf2:000:009
+  samples:
+    1: CasioMT70.sf2:000:010
+    messages:
+    - cc:1:120:0 # All Sound Off
+    - cc:1:121:0 # Reset All Controllers
+      #- cc:1:64:127 # Sustain on.
+  piano:
+    1: CasioMT11.sf2:000:000
+  electric piano:
+    1: CasioMT11.sf2:000:001
+  harp:
+    1: CasioMT11.sf2:000:002
+  pipe organ:
+    1: CasioMT11.sf2:000:003
+  organ:
+    1: CasioMT11.sf2:000:004
+  accordion:
+    1: CasioMT11.sf2:000:005
+  violin:
+    1: CasioMT11.sf2:000:006
+  clarinet:
+    1: CasioMT11.sf2:000:007
+
+
+init:
+  fluidsettings:
+    synth.reverb.room-size: 0.8
+  messages: [cc:1:1:0,
+    cc:1:120:0, # All Sound Off
+    cc:1:121:0, # Reset All Controllers
+  ]
+  comment: blah blah
+
+    ## Router rule to transpose
+    #- {type: note, chan: 1=2, par1: 0-127*1+5}
