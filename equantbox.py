@@ -4,7 +4,7 @@ Based on...
 SquishBox Raspberry Pi FluidPatcher interface
 """
 
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
 import sys, glob, re
 import subprocess
@@ -25,7 +25,7 @@ from PIL import ImageFont
 
 # Uart (how Pi talks to Pico)
 
-ser = serial.Serial('/dev/ttyS0', 4800)
+ser = serial.Serial('/dev/ttyS0', 9600)
 ser.write(b'HiHi\n')
 
 # Raspberry Pi hardware SPI config (for Nokia display):
@@ -66,23 +66,22 @@ class SquishBox():
     """An interface for RPi using character LCD and buttons"""
 
     def nokia_print(self, newline):
-        self.nokia_lines.append(newline)
-        #disp = LCD.PCD8544(DC, RST, spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE, max_speed_hz=4000000))
-        #disp.begin(contrast=40)
-        self.disp.clear()
-        #font = ImageFont.load_default()
-        image = Image.new('1', (LCD.LCDWIDTH, LCD.LCDHEIGHT))
-        draw = ImageDraw.Draw(image)
-        draw.rectangle((0,0,LCD.LCDWIDTH,LCD.LCDHEIGHT), outline=255, fill=255)
-        for idx, line in enumerate(self.nokia_lines[-5:]):
-        #draw.text((1,1), 'Starting.', font=font)
-            draw.text((1,idx*8), line, font=self.font)
-        self.disp.image(image)
-        self.disp.display()
+#        self.nokia_lines.append(newline)
+#        self.disp.clear()
+#        image = Image.new('1', (LCD.LCDWIDTH, LCD.LCDHEIGHT))
+#        draw = ImageDraw.Draw(image)
+#        draw.rectangle((0,0,LCD.LCDWIDTH,LCD.LCDHEIGHT), outline=255, fill=255)
+#        for idx, line in enumerate(self.nokia_lines[-5:]):
+#            draw.text((1,idx*8), line, font=self.font)
+#        self.disp.image(image)
+#        self.disp.display()
+        message = f"NK {newline}\n"
+        ser.write(message.encode('utf-8'))
     def nokia_clear(self):
-        self.nokia_lines = []
-        self.disp.clear()
-        self.disp.display()
+        #self.nokia_lines = []
+        #self.disp.clear()
+        #self.disp.display()
+        ser.write(b'NKCLEAR\n')
 
     def __init__(self):
         """Initializes the LCD and GPIO
@@ -117,9 +116,9 @@ class SquishBox():
         self.buttoncallback = None
 
         self.nokia_lines = []
-        self.disp = LCD.PCD8544(DC, RST, spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE, max_speed_hz=4000000))
-        self.disp.begin(contrast=40)
-        self.font = ImageFont.load_default()
+        #self.disp = LCD.PCD8544(DC, RST, spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE, max_speed_hz=4000000))
+        #self.disp.begin(contrast=40)
+        #self.font = ImageFont.load_default()
         self.nokia_print("Starting")
 
         #for val in (0x33, 0x32, 0x28, 0x0c, 0x06):
@@ -536,7 +535,11 @@ class FluidBox:
     def patchmode(self):
         """Selects a patch and displays the main screen"""
         if fp.patches:
-            warn = fp.apply_patch(self.pno)
+            try:
+                warn = fp.apply_patch(self.pno)
+            except:
+                self.pno = 0
+                warn = fp.apply_patch(self.pno)
         else:
             warn = fp.apply_patch('')
         pno = self.pno
@@ -600,7 +603,7 @@ class FluidBox:
             #bank = Path(Path(next_bank_path).name)
             #if bank == "": return False
         sb.lcd_write(bank.name, 0, mode='scroll', now=True)
-        sb.lcd_write("loading patches ", 1, mode='ljust', now=True)
+        sb.lcd_write("loading patches", 1, mode='ljust', now=True)
         sb.progresswheel_start()
         try: fp.load_bank(bank)
         except Exception as e:
