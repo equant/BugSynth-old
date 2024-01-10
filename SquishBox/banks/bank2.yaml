@@ -3,11 +3,44 @@ description: example bank file that demonstrates many of the features of fluidpa
 
 patches:
   Big Trucks:
-    1: CasioMT11.sf2:000:001
+    1: CasioMT11.sf2:000:001  # violin
     2: CasioMT70.sf2:000:006
+    10: FluidR3_GM.sf2:128:032  # Jazz kit
   Rug:
     1: CasioMT11.sf2:000:006
     2: CasioMT70.sf2:000:004
+    10: FluidR3_GM.sf2:128:032  # Jazz kit
+  Ceiling:
+    1: CasioMT11.sf2:000:007  # clarinet
+    2: CasioMT70.sf2:000:002  # flute
+    10: FluidR3_GM.sf2:128:032  # Jazz kit
+  Defroster Heart:
+    1: CasioMT11.sf2:000:001  # violin
+    2: CasioMT70.sf2:000:000  # pipe organ
+    10: FluidR3_GM.sf2:128:032  # Jazz kit
+  Nothere:
+    1: CasioMT11.sf2:000:004  # organ
+    2: CasioMT70.sf2:000:008  # wah brass
+    10: FluidR3_GM.sf2:128:032  # Jazz kit
+  Hearts on Fire:
+    1: CasioMT11.sf2:000:002  # harp
+    2: CasioMT70.sf2:000:006  # chorus
+    10: FluidR3_GM.sf2:128:032  # Jazz kit
+  Self Adhesive:
+    1: CasioMT11.sf2:000:001  # violin
+    2: CasioMT70.sf2:000:007  # synth. brass
+    10: FluidR3_GM.sf2:128:032  # Jazz kit
+  Zip Lock:
+    1: CasioMT11.sf2:000:002  # harp
+    2: CasioMT70.sf2:000:005  # jazz organ 2
+    10: FluidR3_GM.sf2:128:032  # Jazz kit
+  Color TV:
+    1: CasioMT11.sf2:000:004  # organ
+    2: CasioMT70.sf2:000:009  # synth. bells
+    10: FluidR3_GM.sf2:128:032  # Jazz kit
+  Access Road to Heck:
+    1: CasioMT11.sf2:000:001  # violin
+    10: FluidR3_GM.sf2:128:032  # Jazz kit
   pipe organ:
     1: CasioMT70.sf2:000:000
   wood wind:
@@ -50,7 +83,6 @@ patches:
     1: CasioMT11.sf2:000:006
   clarinet:
     1: CasioMT11.sf2:000:007
-
 
 init:
   fluidsettings:
