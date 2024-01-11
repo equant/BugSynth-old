@@ -3,7 +3,7 @@ description: example bank file that demonstrates many of the features of fluidpa
 
 patches:
   Big Trucks:
-    1: CasioMT11.sf2:000:001  # violin
+    1: CasioMT11.sf2:000:006  # violin
     2: CasioMT70.sf2:000:006
     10: FluidR3_GM.sf2:128:032  # Jazz kit
   Rug:
@@ -15,7 +15,7 @@ patches:
     2: CasioMT70.sf2:000:002  # flute
     10: FluidR3_GM.sf2:128:032  # Jazz kit
   Defroster Heart:
-    1: CasioMT11.sf2:000:001  # violin
+    1: CasioMT11.sf2:000:006  # violin
     2: CasioMT70.sf2:000:000  # pipe organ
     10: FluidR3_GM.sf2:128:032  # Jazz kit
   Nothere:
@@ -27,7 +27,7 @@ patches:
     2: CasioMT70.sf2:000:006  # chorus
     10: FluidR3_GM.sf2:128:032  # Jazz kit
   Self Adhesive:
-    1: CasioMT11.sf2:000:001  # violin
+    1: CasioMT11.sf2:000:006  # violin
     2: CasioMT70.sf2:000:007  # synth. brass
     10: FluidR3_GM.sf2:128:032  # Jazz kit
   Zip Lock:
@@ -39,7 +39,7 @@ patches:
     2: CasioMT70.sf2:000:009  # synth. bells
     10: FluidR3_GM.sf2:128:032  # Jazz kit
   Access Road to Heck:
-    1: CasioMT11.sf2:000:001  # violin
+    1: CasioMT11.sf2:000:006  # violin
     10: FluidR3_GM.sf2:128:032  # Jazz kit
   pipe organ:
     1: CasioMT70.sf2:000:000
